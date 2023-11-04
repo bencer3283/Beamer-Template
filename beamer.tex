@@ -1,0 +1,142 @@
+\documentclass[compress, aspectratio=32]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx} % Required for inserting images
+\graphicspath{ {./} }
+\usepackage{amsmath}
+\usepackage{mathspec}
+\usepackage{xeCJK}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{soul}
+\usepackage{hyperref}
+
+\useinnertheme{circles}
+\useoutertheme[subsection=true, footline=authortitle]{miniframes}
+%\usecolortheme{seagull}
+\usefonttheme{structurebold}
+
+\setmainfont{Sabon}
+\setsansfont{IBM Plex Sans}
+\setmathfont(Digits,Latin){Goldman Sans}
+\setmonofont{Roboto Mono}
+
+\AtBeginSection[]
+{
+    
+  \begin{frame}[allowframebreaks]
+    
+    \tableofcontents[currentsection]
+    
+  \end{frame}
+}
+
+% \AtBeginSubsection[]{
+%     \begin{frame}[allowframebreaks]
+%         \tableofcontents[currentsubsection]
+%     \end{frame}
+% }
+
+\title[Beamer Template]{A beamer template}
+\subtitle{for various usages}
+\author{Po-Sheng Cheng}
+\institute{National Taiwan University}
+\date{\today}
+
+\setbeamertemplate{navigation symbols}{\insertframenumber/\inserttotalframenumber}
+\setbeamertemplate{title page}{
+    \vbox{}
+    \vfill
+    \begin{beamercolorbox}[sep=8pt,left]{title}
+        \usebeamerfont{title}\inserttitle\par
+        \ifx\insertsubtitle\@empty
+        \else
+          \vskip0.25em
+          {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+        \fi     
+      \end{beamercolorbox}
+    \vskip1em\par
+    \begin{beamercolorbox}[sep=8pt,left]{author}
+      \usebeamerfont{author}\insertauthor
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[sep=8pt,left]{institute}
+        \usebeamerfont{institute}\insertinstitute
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[sep=8pt,right]{date}
+        \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}\vskip0.5em
+    {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+    \vfill
+}
+
+\definecolor{customColor}{RGB}{158,201,114}
+\setbeamercolor*{palette primary}{fg=customColor!60!black,bg=white!85!customColor}
+\setbeamercolor*{palette secondary}{fg=customColor!70!black,bg=white!60!customColor}
+\setbeamercolor*{palette tertiary}{bg=customColor!80!black,fg=white!50!customColor}
+\setbeamercolor*{palette quaternary}{fg=customColor,bg=white!20!customColor}
+
+\setbeamercolor*{sidebar}{fg=customColor,bg=customColor!75!white}
+
+\setbeamercolor*{palette sidebar primary}{fg=customColor!10!black}
+\setbeamercolor*{palette sidebar secondary}{fg=white}
+\setbeamercolor*{palette sidebar tertiary}{fg=customColor!50!black}
+\setbeamercolor*{palette sidebar quaternary}{fg=white!10!customColor}
+
+\setbeamercolor*{titlelike}{parent=palette primary}
+\setbeamercolor{frametitle}{bg=white!90!customColor}
+\setbeamercolor{frametitle right}{bg=white!60!customColor}
+
+\setbeamercolor{block body}{parent=normal text,use=block title,bg=red!0,fg=}
+
+\setbeamercolor*{item projected}{parent=palette primary}%fg=black,bg=black!20}
+
+\setbeamercolor*{normal text}{fg=black,bg=white}
+\setbeamercolor*{alerted text}{fg=black}
+\setbeamercolor*{example text}{fg=black}
+\setbeamercolor*{structure}{fg=black}
+
+\setbeamercolor{author in head/foot}{parent=title in head/foot}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}[allowframebreaks]{Outline}
+    \tableofcontents
+\end{frame}
+
+\section{One}
+\frame{\sectionpage}
+\begin{frame}{Frame title}
+    \begin{itemize}
+        \item Item one
+        \begin{itemize}
+            \item Item one dot one
+            \item Item one dot two
+        \end{itemize}
+        \item Item two
+        \begin{itemize}
+            \item Item two dot one
+            \item Item two dot two
+            \item Item two dot three
+        \end{itemize}
+        \item Item three
+        \item Item four
+    \end{itemize}
+\end{frame}
+
+\section{Two}
+\subsection[Columns]{Multiple columns}
+\begin{frame}
+    \frametitle{Frame title}
+    \begin{columns}
+        \begin{column}{0.5\linewidth}
+            Column one
+        \end{column}
+        \begin{column}{0.5\linewidth}
+            Column two
+        \end{column}
+    \end{columns}
+
+\end{frame}
+
+\end{document}
