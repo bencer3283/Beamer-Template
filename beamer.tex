@@ -13,11 +13,20 @@
 \usepackage{subcaption}
 \usepackage{ulem}
 \usepackage{listings}
+\usepackage[backend=biber, style=authoryear, sorting=none]{biblatex}
+\addbibresource{ref.bib}
+\setcounter{biburlucpenalty}{9900}
+\setcounter{biburllcpenalty}{9900}
+\setcounter{biburlnumpenalty}{9900}
+\setcounter{tocdepth}{1}
+\renewcommand{\lstlistingname}{Code}
 
 \useinnertheme{circles}
 \useoutertheme[subsection=true, footline=authortitle]{miniframes}
 %\usecolortheme{seagull}
 \usefonttheme{structurebold}
+
+\renewcommand{\lstlistingname}{Code}
 
 \setmainfont{Sabon}
 \setsansfont{IBM Plex Sans}
@@ -102,6 +111,7 @@
 \setbeamercolor{author in head/foot}{parent=title in head/foot}
 
 \lstdefinestyle{mystyle}{basicstyle=\ttfamily\scriptsize, numbers=left, frame=lines, breaklines=true, showstringspaces=false}
+\lstdefinestyle{mystyleoutput}{basicstyle=\ttfamily\itshape\scriptsize, numbers=none, frame=lines, breaklines=true, showstringspaces=false}
 \lstset{style=mystyle}
 
 \begin{document}
